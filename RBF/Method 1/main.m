@@ -48,7 +48,7 @@ B=sum(Ytest==output_test)/size(Ytest,2);
 Y=ones(size(yuce));
 Y(yuce<0)=-1;
 
-%% 几个指标
+%% 指标
 TP=sum(Ytest==1&output_test==1);
 FP=sum(Ytest==1&output_test==-1);
 TN=sum(Ytest==-1&output_test==-1);
@@ -62,7 +62,7 @@ Recall=TP/(TP+FN);
 F1=A*TP/(2*TP+FP+FN);
 PPV=TP/(TP+FP);
 sensitivity1=TP/(TP+FN);
-sensitivity2=TN/(TN+FP);
+specificity=TN/(TN+FP);
 
 
 
